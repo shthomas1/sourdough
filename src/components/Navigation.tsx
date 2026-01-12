@@ -1,4 +1,6 @@
 import { Link, useLocation } from 'react-router-dom'
+import { siteConfig } from '../config/site.config'
+import { ThemeToggle } from './ThemeToggle'
 import './Navigation.css'
 
 const Navigation = () => {
@@ -9,32 +11,32 @@ const Navigation = () => {
       <div className="nav-container">
         <Link to="/" className="nav-logo">
           <span className="logo-icon">🍞</span>
-          <span className="logo-text">Sourdough</span>
+          <span className="logo-text">{siteConfig.company.name}</span>
         </Link>
         <ul className="nav-links">
+          {siteConfig.navigation.map((item) => (
+            <li key={item.href}>
+              {item.external ? (
+                <a
+                  href={item.href}
+                  className={location.pathname === item.href ? 'active' : ''}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <Link
+                  to={item.href}
+                  className={location.pathname === item.href ? 'active' : ''}
+                >
+                  {item.label}
+                </Link>
+              )}
+            </li>
+          ))}
           <li>
-            <Link 
-              to="/" 
-              className={location.pathname === '/' ? 'active' : ''}
-            >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link 
-              to="/about" 
-              className={location.pathname === '/about' ? 'active' : ''}
-            >
-              About
-            </Link>
-          </li>
-          <li>
-            <Link 
-              to="/contact" 
-              className={location.pathname === '/contact' ? 'active' : ''}
-            >
-              Contact
-            </Link>
+            <ThemeToggle />
           </li>
         </ul>
       </div>

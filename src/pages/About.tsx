@@ -1,31 +1,23 @@
-import './About.css'
+import { Page } from '../components/layout'
+import { SEO } from '../components/SEO'
+import { About as AboutSection, Testimonials } from '../components/sections'
+import { Stats } from '../components/trust'
+import { siteConfig } from '../config/site.config'
 
+/**
+ * About page using section components
+ */
 const About = () => {
   return (
-    <div className="page about-page">
-      <div className="page-container">
-        <div className="page-header">
-          <h1 className="page-title">About</h1>
-          <p className="page-subtitle">
-            Replace this content with information about your project or organization.
-          </p>
-        </div>
-        <div className="page-content">
-          <section className="content-block">
-            <h2 className="section-title">Section One</h2>
-            <p className="section-text">
-              Your about page content goes here. Customize this section to tell your story.
-            </p>
-          </section>
-          <section className="content-block">
-            <h2 className="section-title">Section Two</h2>
-            <p className="section-text">
-              Add more sections as needed to provide comprehensive information about your project.
-            </p>
-          </section>
-        </div>
-      </div>
-    </div>
+    <Page>
+      <SEO
+        title="About"
+        description={`Learn more about ${siteConfig.company.name}`}
+      />
+      <AboutSection />
+      <Stats />
+      <Testimonials />
+    </Page>
   )
 }
 

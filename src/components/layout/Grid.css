@@ -1,0 +1,34 @@
+.grid {
+  display: grid;
+  width: 100%;
+}
+
+/* Column configurations */
+.grid {
+  grid-template-columns: repeat(var(--grid-cols-sm, 1), 1fr);
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(var(--grid-cols-md, 2), 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(var(--grid-cols-lg, 3), 1fr);
+  }
+}
+
+/* Gap variants */
+.grid-gap-sm {
+  gap: var(--spacing-sm);
+}
+
+.grid-gap-md {
+  gap: var(--spacing-md);
+}
+
+.grid-gap-lg {
+  gap: var(--spacing-lg);
+}
