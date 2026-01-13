@@ -191,6 +191,39 @@ export const siteConfig: SiteConfig = {
   certifications: [
     { id: 'cert-1', name: 'Certification Name', issuer: 'Issuing Organization' },
   ],
+  counter: {
+    title: 'TypeScript Counter Demo',
+    description: 'This page demonstrates TypeScript features including interfaces, types, type-safe event handlers, and React hooks with proper typing.',
+    initialValue: 0,
+    min: -100,
+    max: 100,
+    step: 1,
+    showHistory: false,
+    showClicksPerSecond: true,
+    seoTitle: 'Counter Demo',
+    seoDescription: 'TypeScript counter demonstration page',
+  },
+  email: {
+    title: 'Send Email',
+    description: 'Compose and send an email to your recipients.',
+    recipients: [
+      { id: 'recipient-1', name: 'Michael', email: 'mpmaurer@crimson.ua.edu' },
+      { id: 'recipient-2', name: 'Placeholder Recipient 2', email: 'placeholder2@example.com' },
+      { id: 'recipient-3', name: 'Placeholder Recipient 3', email: 'placeholder3@example.com' },
+    ],
+    formProvider: 'brevo',
+    formProviderConfig: {
+      brevo: {
+        apiKey: 'null',
+        sender: {
+          email: 'sourdoughtester@gmail.com',
+          name: 'Your App Notifications',
+        },
+      },
+    },
+    seoTitle: 'Send Email',
+    seoDescription: 'Send an email to your recipients',
+  },
   footer: {
     copyright: `© ${new Date().getFullYear()} Your Company Name. All rights reserved.`,
     links: [
