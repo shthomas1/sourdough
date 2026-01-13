@@ -2,7 +2,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(180deg, var(--sourdough-cream) 0%, var(--sourdough-beige) 100%);
+  background-color: var(--color-background);
 }
 
 .main-content {
