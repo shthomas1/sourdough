@@ -87,6 +87,34 @@ export interface Certification {
   url?: string
 }
 
+export interface ContactInfo {
+  name: string
+  organization?: string
+  phone?: string
+  email?: string
+  role?: string
+}
+
+export interface AffectedArea {
+  id: string
+  name: string
+  coordinates: [number, number] // [latitude, longitude]
+  description?: string
+  severity?: 'low' | 'medium' | 'high' | 'critical'
+  radius?: number // in meters, for circular areas
+  polygon?: [number, number][] // Array of [lat, lng] for custom shapes
+  waysToHelp?: string[] // Ways people can help in this area
+  contacts?: ContactInfo[] // Who to contact for this area
+}
+
+export interface MapConfig {
+  center: [number, number] // [latitude, longitude]
+  zoom: number
+  affectedAreas?: AffectedArea[]
+  title?: string
+  subtitle?: string
+}
+
 export interface SiteConfig {
   company: CompanyInfo
   navigation: NavItem[]
@@ -97,6 +125,7 @@ export interface SiteConfig {
   stats?: Stat[]
   clientLogos?: ClientLogo[]
   certifications?: Certification[]
+  map?: MapConfig
   footer?: {
     copyright?: string
     links?: NavItem[]
@@ -191,6 +220,60 @@ export const siteConfig: SiteConfig = {
   certifications: [
     { id: 'cert-1', name: 'Certification Name', issuer: 'Issuing Organization' },
   ],
+  map: {
+    center: [37.7749, -122.4194], // San Francisco, CA
+    zoom: 10,
+    title: 'Affected Areas',
+    subtitle: 'View areas that have been impacted',
+    affectedAreas: [
+      {
+        id: 'area-1',
+        name: 'Downtown District',
+        coordinates: [37.7749, -122.4194],
+        description: 'High impact area requiring immediate attention',
+        severity: 'high',
+        radius: 2000, // 2km radius
+        waysToHelp: [
+          'Donate supplies to local shelters',
+          'Volunteer at community centers',
+          'Provide transportation assistance',
+          'Share information on social media',
+        ],
+        contacts: [
+          {
+            name: 'Emergency Response Team',
+            organization: 'City Emergency Services',
+            phone: '+1 (555) 123-4567',
+            email: 'emergency@city.gov',
+            role: '24/7 Emergency Hotline',
+          },
+          {
+            name: 'Community Coordinator',
+            organization: 'Local Relief Organization',
+            phone: '+1 (555) 234-5678',
+            email: 'coordinator@relief.org',
+            role: 'Volunteer Coordination',
+          },
+        ],
+      },
+      {
+        id: 'area-2',
+        name: 'North Region',
+        coordinates: [37.7849, -122.4094],
+        description: 'Moderate impact area',
+        severity: 'medium',
+        radius: 1500,
+      },
+      {
+        id: 'area-3',
+        name: 'South Region',
+        coordinates: [37.7649, -122.4294],
+        description: 'Low impact area under monitoring',
+        severity: 'low',
+        radius: 1000,
+      },
+    ],
+  },
   footer: {
     copyright: `© ${new Date().getFullYear()} Your Company Name. All rights reserved.`,
     links: [

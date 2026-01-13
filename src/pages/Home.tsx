@@ -1,6 +1,6 @@
 import { Page } from '../components/layout'
 import { SEO } from '../components/SEO'
-import { Hero, Services, About as AboutSection, Testimonials, CTA } from '../components/sections'
+import { Hero, Services, About as AboutSection, Testimonials, CTA, Map } from '../components/sections'
 import { Stats, ClientLogos } from '../components/trust'
 import { siteConfig } from '../config/site.config'
 
@@ -18,6 +18,7 @@ const Home = () => {
       <Hero />
       <Stats />
       <Services />
+      <Map />
       <AboutSection />
       <ClientLogos />
       <Testimonials />
