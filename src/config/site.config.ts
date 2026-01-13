@@ -182,6 +182,7 @@ export const siteConfig: SiteConfig = {
     { id: 'stat-1', value: '10+', label: 'Years Experience', icon: '📅' },
     { id: 'stat-2', value: '500+', label: 'Happy Clients', icon: '😊' },
     { id: 'stat-3', value: '1000+', label: 'Projects Completed', icon: '✅' },
+    {id: 'stat-4', value: '30+', label: 'Industry Expert Approvals', icon: '🧠'}
   ],
   clientLogos: [
     { id: 'client-1', name: 'Client One' },
