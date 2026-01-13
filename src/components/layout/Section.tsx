@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { ReactNode, forwardRef } from 'react'
 import './Section.css'
 
 interface SectionProps {
@@ -13,15 +13,16 @@ interface SectionProps {
  * Section wrapper component
  * Provides consistent section spacing and styling variants
  */
-export const Section = ({ 
+export const Section = forwardRef<HTMLElement, SectionProps>(({ 
   children, 
   id,
   className = '', 
   variant = 'default',
   padding = 'lg'
-}: SectionProps) => {
+}, ref) => {
   return (
     <section 
+      ref={ref}
       id={id}
       className={`section section-${variant} section-padding-${padding} ${className}`.trim()}
     >
@@ -30,4 +31,6 @@ export const Section = ({
       </div>
     </section>
   )
-}
+})
+
+Section.displayName = 'Section'

@@ -1,5 +1,6 @@
 import { siteConfig } from '../../config/site.config'
 import { Section, SectionHeader, Grid } from '../layout'
+import { useScrollAnimation } from '../../hooks/useScrollAnimation'
 import './About.css'
 
 interface AboutProps {
@@ -29,20 +30,34 @@ export const About = ({
   ]
 
   const contentArray = Array.isArray(aboutContent) ? aboutContent : [aboutContent]
+  const { ref: sectionRef, isVisible: sectionVisible } = useScrollAnimation({
+    threshold: 0.1,
+    rootMargin: '0px',
+  })
+  const { ref: textRef, isVisible: textVisible } = useScrollAnimation({
+    threshold: 0.1,
+    rootMargin: '0px',
+    delay: 200,
+  })
 
   return (
-    <Section id="about" padding="xl">
+    <Section id="about" padding="xl" ref={sectionRef}>
       <SectionHeader 
         title={title} 
         subtitle={subtitle || `Learn more about ${siteConfig.company.name}`}
       />
       <div className="about-content">
         {image && (
-          <div className="about-image">
+          <div 
+            className={`about-image fade-in ${sectionVisible ? 'visible' : ''}`}
+          >
             <img src={image} alt={title} />
           </div>
         )}
-        <div className="about-text">
+        <div 
+          ref={textRef}
+          className={`about-text fade-in-up ${textVisible ? 'visible' : ''}`}
+        >
           {contentArray.map((paragraph, index) => (
             <p key={index} className="about-paragraph">{paragraph}</p>
           ))}
