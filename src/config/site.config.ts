@@ -87,6 +87,34 @@ export interface Certification {
   url?: string
 }
 
+export interface ContactInfo {
+  name: string
+  organization?: string
+  phone?: string
+  email?: string
+  role?: string
+}
+
+export interface AffectedArea {
+  id: string
+  name: string
+  coordinates: [number, number] // [latitude, longitude]
+  description?: string
+  severity?: 'low' | 'medium' | 'high' | 'critical'
+  radius?: number // in meters, for circular areas
+  polygon?: [number, number][] // Array of [lat, lng] for custom shapes
+  waysToHelp?: string[] // Ways people can help in this area
+  contacts?: ContactInfo[] // Who to contact for this area
+}
+
+export interface MapConfig {
+  center: [number, number] // [latitude, longitude]
+  zoom: number
+  affectedAreas?: AffectedArea[]
+  title?: string
+  subtitle?: string
+}
+
 export interface SiteConfig {
   company: CompanyInfo
   navigation: NavItem[]
@@ -97,6 +125,7 @@ export interface SiteConfig {
   stats?: Stat[]
   clientLogos?: ClientLogo[]
   certifications?: Certification[]
+  map?: MapConfig
   footer?: {
     copyright?: string
     links?: NavItem[]
@@ -106,7 +135,7 @@ export interface SiteConfig {
 // Default configuration - Edit this to customize your site
 export const siteConfig: SiteConfig = {
   company: {
-    name: 'Your Company Name',
+    name: 'Sourdough',
     email: 'hello@example.com',
     phone: '+1 (555) 123-4567',
     location: 'San Francisco, CA',
@@ -116,6 +145,7 @@ export const siteConfig: SiteConfig = {
     { label: 'About', href: '/about' },
     { label: 'Services', href: '/services' },
     { label: 'Contact', href: '/contact' },
+    { label: 'Supply Chain', href: '/supply-chain' },
   ],
   services: [
     {
@@ -179,9 +209,10 @@ export const siteConfig: SiteConfig = {
     { platform: 'GitHub', url: 'https://github.com/yourusername', icon: '💻' },
   ],
   stats: [
-    { id: 'stat-1', value: '10+', label: 'Years Experience', icon: '📅' },
-    { id: 'stat-2', value: '500+', label: 'Happy Clients', icon: '😊' },
-    { id: 'stat-3', value: '1000+', label: 'Projects Completed', icon: '✅' },
+    { id: 'stat-1', value: '10+', label: 'Years Experience', icon: '' },
+    { id: 'stat-2', value: '30+', label: 'Industry Expert Approvals', icon: '' },
+    { id: 'stat-3', value: '500+', label: 'Happy Clients', icon: '' },
+    { id: 'stat-4', value: '1000+', label: 'Projects Completed', icon: '' },
   ],
   clientLogos: [
     { id: 'client-1', name: 'Client One' },
@@ -225,7 +256,7 @@ export const siteConfig: SiteConfig = {
     seoDescription: 'Send an email to your recipients',
   },
   footer: {
-    copyright: `© ${new Date().getFullYear()} Your Company Name. All rights reserved.`,
+    copyright: `© ${new Date().getFullYear()} Sourdough. All rights reserved.`,
     links: [
       { label: 'Privacy Policy', href: '/privacy' },
       { label: 'Terms of Service', href: '/terms' },

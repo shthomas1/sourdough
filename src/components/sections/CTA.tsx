@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { siteConfig, CTA as CTAType } from '../../config/site.config'
 import { Section } from '../layout'
+import { useScrollAnimation } from '../../hooks/useScrollAnimation'
 import './CTA.css'
 
 interface CTAProps {
@@ -27,6 +28,11 @@ export const CTA = ({
   const primaryBtn = primaryButton || cta?.primaryButton
   const secondaryBtn = secondaryButton || cta?.secondaryButton
 
+  const { ref: sectionRef, isVisible: sectionVisible } = useScrollAnimation({
+    threshold: 0.2,
+    rootMargin: '0px',
+  })
+
   if (!primaryBtn) {
     return null
   }
@@ -50,8 +56,8 @@ export const CTA = ({
   }
 
   return (
-    <Section variant="primary" padding="xl" className="cta-section">
-      <div className="cta-content">
+    <Section variant="primary" padding="xl" className="cta-section" ref={sectionRef}>
+      <div className={`cta-content fade-in-up ${sectionVisible ? 'visible' : ''}`}>
         <h2 className="cta-title">{ctaTitle}</h2>
         {ctaDescription && <p className="cta-description">{ctaDescription}</p>}
         <div className="cta-buttons">

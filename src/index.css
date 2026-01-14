@@ -44,8 +44,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--sourdough-cream);
-  color: var(--sourdough-text);
+  background-color: var(--color-background);
+  color: var(--color-text);
   line-height: 1.6;
 }
 

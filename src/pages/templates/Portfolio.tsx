@@ -82,7 +82,7 @@ export const Portfolio = () => {
                     rel="noopener noreferrer"
                     className="portfolio-link"
                   >
-                    View Project →
+                    View Project
                   </a>
                 )}
               </div>

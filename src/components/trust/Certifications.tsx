@@ -42,7 +42,7 @@ export const Certifications = ({
                 className="certification-link"
                 aria-label={`View ${cert.name} certification`}
               >
-                →
+                &gt;
               </a>
             )}
           </div>

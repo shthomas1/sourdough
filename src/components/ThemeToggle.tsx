@@ -15,7 +15,7 @@ export const ThemeToggle = () => {
       aria-label={`Switch to ${mode === 'light' ? 'dark' : 'light'} mode`}
       title={`Switch to ${mode === 'light' ? 'dark' : 'light'} mode`}
     >
-      {mode === 'light' ? '🌙' : '☀️'}
+      {mode === 'light' ? 'Dark' : 'Light'}
     </button>
   )
 }
