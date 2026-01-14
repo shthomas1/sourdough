@@ -222,59 +222,38 @@ export const siteConfig: SiteConfig = {
   certifications: [
     { id: 'cert-1', name: 'Certification Name', issuer: 'Issuing Organization' },
   ],
-  map: {
-    center: [37.7749, -122.4194], // San Francisco, CA
-    zoom: 10,
-    title: 'Affected Areas',
-    subtitle: 'View areas that have been impacted',
-    affectedAreas: [
-      {
-        id: 'area-1',
-        name: 'Downtown District',
-        coordinates: [37.7749, -122.4194],
-        description: 'High impact area requiring immediate attention',
-        severity: 'high',
-        radius: 2000, // 2km radius
-        waysToHelp: [
-          'Donate supplies to local shelters',
-          'Volunteer at community centers',
-          'Provide transportation assistance',
-          'Share information on social media',
-        ],
-        contacts: [
-          {
-            name: 'Emergency Response Team',
-            organization: 'City Emergency Services',
-            phone: '+1 (555) 123-4567',
-            email: 'emergency@city.gov',
-            role: '24/7 Emergency Hotline',
-          },
-          {
-            name: 'Community Coordinator',
-            organization: 'Local Relief Organization',
-            phone: '+1 (555) 234-5678',
-            email: 'coordinator@relief.org',
-            role: 'Volunteer Coordination',
-          },
-        ],
-      },
-      {
-        id: 'area-2',
-        name: 'North Region',
-        coordinates: [37.7849, -122.4094],
-        description: 'Moderate impact area',
-        severity: 'medium',
-        radius: 1500,
-      },
-      {
-        id: 'area-3',
-        name: 'South Region',
-        coordinates: [37.7649, -122.4294],
-        description: 'Low impact area under monitoring',
-        severity: 'low',
-        radius: 1000,
-      },
+  counter: {
+    title: 'TypeScript Counter Demo',
+    description: 'This page demonstrates TypeScript features including interfaces, types, type-safe event handlers, and React hooks with proper typing.',
+    initialValue: 0,
+    min: -100,
+    max: 100,
+    step: 1,
+    showHistory: false,
+    showClicksPerSecond: true,
+    seoTitle: 'Counter Demo',
+    seoDescription: 'TypeScript counter demonstration page',
+  },
+  email: {
+    title: 'Send Email',
+    description: 'Compose and send an email to your recipients.',
+    recipients: [
+      { id: 'recipient-1', name: 'Michael', email: 'mpmaurer@crimson.ua.edu' },
+      { id: 'recipient-2', name: 'Placeholder Recipient 2', email: 'placeholder2@example.com' },
+      { id: 'recipient-3', name: 'Placeholder Recipient 3', email: 'placeholder3@example.com' },
     ],
+    formProvider: 'brevo',
+    formProviderConfig: {
+      brevo: {
+        apiKey: 'null',
+        sender: {
+          email: 'sourdoughtester@gmail.com',
+          name: 'Your App Notifications',
+        },
+      },
+    },
+    seoTitle: 'Send Email',
+    seoDescription: 'Send an email to your recipients',
   },
   footer: {
     copyright: `© ${new Date().getFullYear()} Sourdough. All rights reserved.`,
