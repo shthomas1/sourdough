@@ -4,28 +4,28 @@
 
 **Sourdough Starter** is the official starter template for all tools developed by the Sourdough community. This template makes it trivial to build, customize, and deploy professional business websites. Edit one config file, deploy, and you're done. No design skills required.
 
-## 🙏 Thank You, Contributors!
+## Thank You, Contributors!
 
 This starter template is built and maintained by the Sourdough community. Thank you to all contributors who have helped make this project better. Your contributions make it possible for developers to build professional websites quickly and easily.
 
 If you're a Sourdough contributor, this starter is designed to be the foundation for all Sourdough tools and projects. Feel free to extend it, customize it, and make it your own!
 
-## ✨ Features
+## Features
 
-- ⚛️ **React 18 + TypeScript** - Type-safe, modern development
-- 🎨 **Config-Driven Content** - Edit `site.config.ts`, not JSX
-- 🧩 **Section Components** - Hero, Services, About, Testimonials, CTA, Contact, Footer
-- 🎭 **Theme System** - Light/dark mode with easy customization
-- 📝 **Contact Forms** - Zod validation + multiple providers (EmailJS, Resend, Formspree, Netlify, API)
-- 🔍 **SEO Ready** - Automatic meta tags, sitemap, robots.txt
-- 🏗️ **Layout Primitives** - Page, Section, Grid components for consistent structure
-- 🎯 **Trust Signals** - Testimonials, client logos, stats, certifications
-- 📱 **Mobile-First** - Responsive by default
-- ♿ **Accessible** - Semantic HTML, ARIA labels, keyboard navigation
-- 🚀 **Full-Stack** - Express server with API endpoints
-- 📦 **Page Templates** - One-page, multi-page, and portfolio variants
+- **React 18 + TypeScript** - Type-safe, modern development
+- **Config-Driven Content** - Edit `site.config.ts`, not JSX
+- **Section Components** - Hero, Services, About, Testimonials, CTA, Contact, Footer
+- **Theme System** - Light/dark mode with easy customization
+- **Contact Forms** - Zod validation + multiple providers (EmailJS, Resend, Formspree, Netlify, API)
+- **SEO Ready** - Automatic meta tags, sitemap, robots.txt
+- **Layout Primitives** - Page, Section, Grid components for consistent structure
+- **Trust Signals** - Testimonials, client logos, stats, certifications
+- **Mobile-First** - Responsive by default
+- **Accessible** - Semantic HTML, ARIA labels, keyboard navigation
+- **Full-Stack** - Express server with API endpoints
+- **Page Templates** - One-page, multi-page, and portfolio variants
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Clone & Install
 
@@ -135,7 +135,7 @@ testimonials: [
 
 All sections automatically read from this config. Change the config, refresh the page, done.
 
-## 🎨 Customizing Theme
+## Customizing Theme
 
 Edit `src/config/theme.config.ts` to change colors, fonts, spacing:
 
@@ -165,7 +165,7 @@ The theme system automatically:
 - Applies to all components
 - Supports light/dark toggle (button in navigation)
 
-## 📝 Contact Form Configuration
+## Contact Form Configuration
 
 The contact form supports multiple providers. Configure in `src/pages/Contact.tsx`:
 
@@ -226,7 +226,7 @@ The contact form supports multiple providers. Configure in `src/pages/Contact.ts
 
 **Note**: Install `@emailjs/browser` for EmailJS support.
 
-## 🏗️ Page Templates
+## Page Templates
 
 Three pre-built templates are available in `src/pages/templates/`:
 
@@ -271,7 +271,7 @@ import { OnePage } from './pages/templates'
 <Route path="/" element={<OnePage />} />
 ```
 
-## 🔍 SEO Configuration
+## SEO Configuration
 
 ### Automatic Meta Tags
 
@@ -300,7 +300,7 @@ Update `SITE_URL` in the script or set environment variable:
 SITE_URL=https://yoursite.com npm run generate:seo
 ```
 
-## 🚀 Deployment
+## Deployment
 
 ### Vercel
 
@@ -369,18 +369,18 @@ sourdough/
 └── scripts/                 # Build scripts
 ```
 
-## ✅ Guarantees
+## Guarantees
 
 This project guarantees:
 
-- ✅ **Mobile-First** - Responsive on all devices
-- ✅ **Accessible** - WCAG compliant, semantic HTML
-- ✅ **SEO-Ready** - Meta tags, sitemap, robots.txt
-- ✅ **Production-Safe** - TypeScript, error handling, validation
-- ✅ **Fast** - Optimized builds, lazy loading
-- ✅ **Maintainable** - Clear structure, typed configs
+- **Mobile-First** - Responsive on all devices
+- **Accessible** - WCAG compliant, semantic HTML
+- **SEO-Ready** - Meta tags, sitemap, robots.txt
+- **Production-Safe** - TypeScript, error handling, validation
+- **Fast** - Optimized builds, lazy loading
+- **Maintainable** - Clear structure, typed configs
 
-## 🛠️ Available Scripts
+## Available Scripts
 
 - `npm run dev` - Start development servers (frontend + backend)
 - `npm run build` - Build for production
@@ -389,7 +389,7 @@ This project guarantees:
 - `npm run generate:seo` - Generate sitemap and robots.txt
 - `npm run lint` - Run ESLint
 
-## 📖 Component API
+## Component API
 
 ### Layout Components
 
@@ -426,7 +426,7 @@ All sections accept props to override config:
 />
 ```
 
-## 🎯 Common Customizations
+## Common Customizations
 
 ### Add a New Section
 
@@ -458,7 +458,7 @@ Edit `src/config/theme.config.ts` → `colors.light` or `colors.dark`
 />
 ```
 
-## 🤝 Contributing to Sourdough
+## Contributing to Sourdough
 
 This starter template is part of the Sourdough ecosystem. We welcome contributions from the community! Whether you're fixing bugs, adding features, improving documentation, or suggesting ideas, your help makes Sourdough better for everyone.
 
@@ -470,11 +470,11 @@ To contribute:
 3. Make your changes
 4. Submit a pull request
 
-## 📄 License
+## License
 
 This project is open-source and available for use in any project.
 
-## 🆘 Need Help?
+## Need Help?
 
 - Check `SETUP.md` (generated by setup script)
 - Review component files for inline documentation
