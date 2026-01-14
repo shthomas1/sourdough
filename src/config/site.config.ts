@@ -145,6 +145,7 @@ export const siteConfig: SiteConfig = {
     { label: 'About', href: '/about' },
     { label: 'Services', href: '/services' },
     { label: 'Contact', href: '/contact' },
+    { label: 'Supply Chain', href: '/supply-chain' },
   ],
   services: [
     {
