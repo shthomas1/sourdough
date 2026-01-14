@@ -135,7 +135,7 @@ export interface SiteConfig {
 // Default configuration - Edit this to customize your site
 export const siteConfig: SiteConfig = {
   company: {
-    name: 'Davitas Sourdough Bread',
+    name: 'Sourdough',
     email: 'hello@example.com',
     phone: '+1 (555) 123-4567',
     location: 'San Francisco, CA',
@@ -277,10 +277,11 @@ export const siteConfig: SiteConfig = {
     ],
   },
   footer: {
-    copyright: `© ${new Date().getFullYear()} Davitas Sourdough Bread. All rights reserved.`,
+    copyright: `© ${new Date().getFullYear()} Sourdough. All rights reserved.`,
     links: [
       { label: 'Privacy Policy', href: '/privacy' },
       { label: 'Terms of Service', href: '/terms' },
     ],
   },
 }
+

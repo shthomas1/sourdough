@@ -32,28 +32,28 @@ export const Stats = ({
       className="stats-section"
       ref={sectionRef}
     >
-      <Grid columns={{ sm: 2, md: stats.length }} gap="lg">
-        {stats.map((stat, index) => {
-          const { ref: statRef, isVisible: statVisible } = useScrollAnimation({
-            threshold: 0.2,
-            rootMargin: '0px',
-            delay: index * 150, // Stagger counter animations
-          })
-          
-          const animatedValue = useCounterAnimation(stat.value, statVisible, 2000)
+      <Grid columns={{ sm: 2, md: 3, lg: 3 }} gap="lg">
+          {stats.map((stat, index) => {
+            const { ref: statRef, isVisible: statVisible } = useScrollAnimation({
+              threshold: 0.2,
+              rootMargin: '0px',
+              delay: index * 150, // Stagger counter animations
+            })
+            
+            const animatedValue = useCounterAnimation(stat.value, statVisible, 2000)
 
-          return (
-            <div
-              key={stat.id}
-              ref={statRef}
-              className={`stat-item fade-in-up ${statVisible ? 'visible' : ''}`}
-            >
-              {stat.icon && <div className="stat-icon">{stat.icon}</div>}
-              <div className="stat-value">{animatedValue}</div>
-              <div className="stat-label">{stat.label}</div>
-            </div>
-          )
-        })}
+            return (
+              <div
+                key={stat.id}
+                ref={statRef}
+                className={`stat-item fade-in-up ${statVisible ? 'visible' : ''}`}
+              >
+                {stat.icon && <div className="stat-icon">{stat.icon}</div>}
+                <div className="stat-value">{animatedValue}</div>
+                <div className="stat-label">{stat.label}</div>
+              </div>
+            )
+          })}
       </Grid>
     </Section>
   )
