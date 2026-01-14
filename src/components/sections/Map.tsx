@@ -132,12 +132,12 @@ const TabbedPopupContent = ({ area }: { area: AffectedArea }) => {
                       <div className="contact-details">
                         {contact.phone && (
                           <a href={`tel:${contact.phone}`} className="contact-link">
-                            📞 {contact.phone}
+                            {contact.phone}
                           </a>
                         )}
                         {contact.email && (
                           <a href={`mailto:${contact.email}`} className="contact-link">
-                            ✉️ {contact.email}
+                            {contact.email}
                           </a>
                         )}
                       </div>
@@ -328,7 +328,7 @@ const AreaDetailsPanel = ({
       <div className="area-details-header">
         <div className="area-details-title">
           <button className="back-button" onClick={onClose} aria-label="Back">
-            ← Back
+            Back
           </button>
           <h3>{area.name}</h3>
         </div>
@@ -392,12 +392,12 @@ const AreaDetailsPanel = ({
                       <div className="contact-details">
                         {contact.phone && (
                           <a href={`tel:${contact.phone}`} className="contact-link">
-                            📞 {contact.phone}
+                            {contact.phone}
                           </a>
                         )}
                         {contact.email && (
                           <a href={`mailto:${contact.email}`} className="contact-link">
-                            ✉️ {contact.email}
+                            {contact.email}
                           </a>
                         )}
                       </div>
@@ -562,13 +562,13 @@ export const Map = ({
                   {area.description && (
                     <div className="area-list-description">{area.description}</div>
                   )}
-                  <div className="area-list-arrow">→</div>
+                  <div className="area-list-arrow">&gt;</div>
                 </button>
               ))}
             </div>
           ) : (
             <div className="no-areas-message">
-              <div className="no-areas-icon">✓</div>
+              <div className="no-areas-icon">•</div>
               <h5>No Areas Affected</h5>
               <p>There are currently no areas with {selectedSeverity} severity level. This is good news!</p>
             </div>

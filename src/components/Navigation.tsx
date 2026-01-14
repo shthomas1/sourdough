@@ -10,7 +10,6 @@ const Navigation = () => {
     <nav className="navigation">
       <div className="nav-container">
         <Link to="/" className="nav-logo">
-          <span className="logo-icon">🍞</span>
           <span className="logo-text">{siteConfig.company.name}</span>
         </Link>
         <ul className="nav-links">

@@ -211,7 +211,7 @@ const SupplyChain = () => {
 
           <div className="card-single clickable-card" onClick={() => scrollToSection('alert-statistics')}>
             <div className="card-body">
-              <span className="card-icon">⚠️</span>
+              <span className="card-icon">!</span>
               <div>
                 <h5>Critical Alerts</h5>
                 <h4>{criticalClinics + lowStockItems}</h4>
